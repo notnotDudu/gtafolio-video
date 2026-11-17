@@ -18,6 +18,8 @@ export const validateEdl = (edl: Edl) => {
   const errors: string[] = [];
   const push = (message: string) => errors.push(message);
   if (!(edl.fps > 0) || !(edl.duration > 0)) push("fps and duration must be positive");
+  if (edl.skin !== "2002" && edl.skin !== "2026") push("skin must be 2002 or 2026");
+  if (edl.vhs && edl.vhs.strength !== undefined && (edl.vhs.strength < 0 || edl.vhs.strength > 1)) push("vhs strength must be between 0 and 1");
   if (edl.width !== 1920 || edl.height !== 1080) push(`expected 1920x1080, got ${edl.width}x${edl.height}`);
   if (!edl.narration?.file) push("narration file is required");
   const clips = [...edl.clips].sort((a, b) => a.start - b.start);
@@ -39,6 +41,7 @@ export const validateEdl = (edl: Edl) => {
   for (const overlay of edl.overlays) {
     if (!isOverlayName(overlay.component)) push(`unknown overlay ${overlay.component}`);
     else names.add(overlay.component);
+    if (overlay.skin && overlay.skin !== "2002" && overlay.skin !== "2026") push(`${overlay.id} has an unknown skin`);
     if (overlay.end <= overlay.start) push(`${overlay.id} has a non-positive window`);
     if (overlay.start < -0.01 || overlay.end > edl.duration + 0.05) push(`${overlay.id} sits outside the timeline`);
   }

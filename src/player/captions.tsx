@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
-import { OverlayEvent, OverlayName, WordStamp } from "../edl/types";
-import { FONT } from "../theme/palette";
+import { OverlayEvent, OverlayName, Skin, WordStamp } from "../edl/types";
+import { FONT, PAL } from "../theme/palette";
+import { SkinProvider, chromaShadow } from "../theme/stage";
 import { SunsetTitle } from "../theme/type";
 
 const KEY = new Set([
@@ -58,7 +59,8 @@ export const KaraokeCaptions: React.FC<{
   overlays: OverlayEvent[];
   maxWords: number;
   safe: { top: number; right: number; bottom: number; left: number };
-}> = ({ words, overlays, maxWords, safe }) => {
+  skin?: Skin;
+}> = ({ words, overlays, maxWords, safe, skin = "2002" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const time = frame / fps;
@@ -66,7 +68,10 @@ export const KaraokeCaptions: React.FC<{
   const page = pageAt(pages, time);
   const layout = layoutFor(overlays, time);
   if (!page || layout === "hide") return null;
+  const p = PAL[skin];
+  const shadow = skin === "2002" ? `${chromaShadow(frame, fps, 2)}, ${SHADOW}` : SHADOW;
   return (
+    <SkinProvider skin={skin}>
     <AbsoluteFill style={{ pointerEvents: "none" }}>
       <div
         style={{
@@ -91,7 +96,7 @@ export const KaraokeCaptions: React.FC<{
               {active && key ? (
                 <SunsetTitle text={word.word} size={52} />
               ) : (
-                <span style={{ fontFamily: FONT.display, fontSize: 52, lineHeight: 1, textTransform: "uppercase", color: active ? "#FAE2DC" : "#FFFFFF", textShadow: SHADOW }}>
+                <span style={{ fontFamily: FONT.display, fontSize: 52, lineHeight: 1, textTransform: "uppercase", color: active ? p.cream : "#FFFFFF", textShadow: shadow }}>
                   {word.word}
                 </span>
               )}
@@ -100,5 +105,6 @@ export const KaraokeCaptions: React.FC<{
         })}
       </div>
     </AbsoluteFill>
+    </SkinProvider>
   );
 };

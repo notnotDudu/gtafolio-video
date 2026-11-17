@@ -54,4 +54,4 @@ export const SunsetTitle: React.FC<{
   );
 };
 
-export const gradText = (skin: "2026" | "2002" = "2026") => grad(PAL[skin]);
+export const gradText = (skin: "2026" | "2002" = "2002") => grad(PAL[skin]);

@@ -4,7 +4,7 @@ import { CctvProps, ChyronProps, CitationProps, ShortsProps, SocialProps } from 
 import { FONT, PAL, grad } from "../theme/palette";
 import { EASE, fadeStyle, loop01, popStyle, progress, shakeStyle, slideStyle, springStyle, stampStyle, wipeInset } from "../theme/motion";
 import { DriftPlate, Scene } from "../theme/scene";
-import { Exit, Frame, GuideTag, textureFor } from "../theme/stage";
+import { Exit, Frame, GuideTag, chromaShadow, textureFor } from "../theme/stage";
 import { SunsetTitle } from "../theme/type";
 import { unexpected } from "../theme/never";
 import { Host, plateOn } from "./host";
@@ -15,7 +15,7 @@ const blink = (frame: number, fps: number, periodMs: number) => (loop01(frame, f
 
 export const Chyron: React.FC<Host & ChyronProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "lower",
   showGuide,
   live = "Live",
@@ -71,7 +71,7 @@ const DEFAULT_COMMENTS = [
 
 export const SocialQuote: React.FC<Host & SocialProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "lower",
   showGuide,
   handle = "ViceCityLocal",
@@ -145,7 +145,7 @@ export const SocialQuote: React.FC<Host & SocialProps> = ({
 
 export const CctvEvidence: React.FC<Host & CctvProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "lower",
   showGuide,
   camera = "CAM 03  FRONT GATE",
@@ -168,8 +168,10 @@ export const CctvEvidence: React.FC<Host & CctvProps> = ({
   const corner = (pos: React.CSSProperties, rot: number) => (
     <div style={{ ...abs, ...pos, width: 26, height: 26, borderTop: "2px solid rgba(255,255,255,0.9)", borderLeft: "2px solid rgba(255,255,255,0.9)", transform: `rotate(${rot}deg)` }} />
   );
+  const tape = skin === "2002";
+  const readShadow = tape ? chromaShadow(frame, fps) : "0 0 3px rgba(0,0,0,0.9)";
   return (
-    <Frame skin={skin} texture="none">
+    <Frame skin={skin} texture={textureFor(skin, mode)}>
       {plate ? (
         <div style={{ ...abs, inset: 0, filter: "grayscale(0.85) contrast(1.25) brightness(0.95)", transform: `scale(${1.02 + (frame / Math.max(durFrames, 1)) * 0.06})` }}>
           <Scene variant="dusk" skin={skin} uid="cctv" />
@@ -183,11 +185,11 @@ export const CctvEvidence: React.FC<Host & CctvProps> = ({
         {corner({ right: 16, top: 16 }, 90)}
         {corner({ right: 16, bottom: 16 }, 180)}
         {corner({ left: 16, bottom: 16 }, 270)}
-        <div style={{ ...abs, left: 26, top: 24, fontFamily: FONT.mono, fontSize: 11, color: "#FFFFFF", lineHeight: 1.5, letterSpacing: "0.06em", textTransform: "uppercase", textShadow: "0 0 3px rgba(0,0,0,0.9)" }}>
+        <div style={{ ...abs, left: 26, top: 24, fontFamily: FONT.mono, fontSize: 11, color: "#FFFFFF", lineHeight: 1.5, letterSpacing: "0.06em", textTransform: "uppercase", textShadow: readShadow }}>
           <div>{camera}</div>
-          <div>{tc}</div>
+          <div style={{ fontFamily: tape ? FONT.vhs : FONT.mono, fontSize: tape ? 16 : 11 }}>{tc}</div>
         </div>
-        <div style={{ ...abs, right: 28, top: 26, display: "flex", alignItems: "center", gap: 6, fontFamily: FONT.mono, fontSize: 11, color: "#FFFFFF" }}>
+        <div style={{ ...abs, right: 28, top: 26, display: "flex", alignItems: "center", gap: 6, fontFamily: FONT.mono, fontSize: 11, color: "#FFFFFF", textShadow: tape ? chromaShadow(frame, fps) : undefined }}>
           <div style={{ width: 9, height: 9, borderRadius: 5, background: "#FF2B2B", boxShadow: "0 0 8px #FF2B2B", opacity: blink(frame, fps, 1000) }} />
           REC
         </div>
@@ -220,7 +222,7 @@ const DEFAULT_CHIPS = [
 
 export const Citation: React.FC<Host & CitationProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "lower",
   showGuide,
   chips = DEFAULT_CHIPS,
@@ -258,7 +260,7 @@ const OUTLINE = "0 2px 0 #171717, 2px 0 0 #171717, -2px 0 0 #171717, 0 -2px 0 #1
 
 export const ShortsCaptions: React.FC<Host & ShortsProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   keyword = "GTA VI vs",

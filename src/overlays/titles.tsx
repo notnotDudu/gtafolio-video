@@ -12,7 +12,7 @@ const abs: React.CSSProperties = { position: "absolute" };
 
 export const Lockup: React.FC<Host & LockupProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   monogram = "GF",
@@ -104,7 +104,7 @@ export const Lockup: React.FC<Host & LockupProps> = ({
 
 export const Presents: React.FC<Host & PresentsProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   brand = "GTAFolio",
@@ -146,7 +146,7 @@ export const Presents: React.FC<Host & PresentsProps> = ({
 
 export const BeatCard: React.FC<Host & BeatProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   chapter = "Chapter 02",
@@ -232,7 +232,7 @@ const Reel: React.FC<{ to: number; size: number }> = ({ to, size }) => {
 
 export const StatCounter: React.FC<Host & CounterProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   to = 24,

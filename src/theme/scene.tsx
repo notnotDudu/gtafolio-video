@@ -41,7 +41,7 @@ export type SceneVariant = "dusk" | "day" | "night";
 
 export const Scene: React.FC<{ variant?: SceneVariant; skin?: Skin; palms?: boolean; uid: string }> = ({
   variant = "dusk",
-  skin = "2026",
+  skin = "2002",
   palms = true,
   uid,
 }) => {
@@ -107,7 +107,7 @@ export const DriftPlate: React.FC<{
   variant?: SceneVariant;
   dim?: number;
   palms?: boolean;
-}> = ({ skin = "2026", uid, durFrames, variant = "dusk", dim = 0, palms = true }) => {
+}> = ({ skin = "2002", uid, durFrames, variant = "dusk", dim = 0, palms = true }) => {
   const frame = useCurrentFrame();
   const span = Math.max(durFrames, 1);
   const scale = 1.02 + (frame / span) * 0.07;

@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { Clip, Edl, Transition, WordStamp } from "../edl/types";
+import { Clip, Edl, Skin, Transition, WordStamp } from "../edl/types";
 import { OverlayView } from "../overlays/registry";
 import { FONT, PAL } from "../theme/palette";
 import { Scene } from "../theme/scene";
@@ -36,10 +36,11 @@ const cropped = (clip: Clip): React.CSSProperties => {
   };
 };
 
-const Placeholder: React.FC<{ clip: Clip }> = ({ clip }) => {
+const Placeholder: React.FC<{ clip: Clip; skin: Skin }> = ({ clip, skin }) => {
   const look = clip.placeholder;
   const variant = look?.variant ?? "dusk";
   const colors = look?.colors;
+  const plate = clip.grade === "2002" || clip.grade === "2026" ? clip.grade : skin;
   return (
     <AbsoluteFill>
       {colors ? (
@@ -47,7 +48,7 @@ const Placeholder: React.FC<{ clip: Clip }> = ({ clip }) => {
       ) : (
         <AbsoluteFill>
           <div style={{ position: "absolute", inset: 0, width: 640, height: 360, zoom: 3 }}>
-            <Scene variant={variant} skin={clip.grade === "2002" ? "2002" : "2026"} uid={clip.id} />
+            <Scene variant={variant} skin={plate} uid={clip.id} />
           </div>
         </AbsoluteFill>
       )}
@@ -58,11 +59,11 @@ const Placeholder: React.FC<{ clip: Clip }> = ({ clip }) => {
   );
 };
 
-const ShotMedia: React.FC<{ clip: Clip; fps: number }> = ({ clip, fps }) => {
+const ShotMedia: React.FC<{ clip: Clip; fps: number; skin: Skin }> = ({ clip, fps, skin }) => {
   const style = cropped(clip);
   switch (clip.kind) {
     case "placeholder":
-      return <Placeholder clip={clip} />;
+      return <Placeholder clip={clip} skin={skin} />;
     case "still":
       return <Img src={footageSrc(clip.file)} style={style} />;
     case "video":
@@ -109,7 +110,7 @@ const TransitionLayer: React.FC<{ blend?: Transition; durFrames: number }> = ({ 
   }
 };
 
-const ShotClip: React.FC<{ clip: Clip }> = ({ clip }) => {
+const ShotClip: React.FC<{ clip: Clip; skin: Skin; tape: boolean }> = ({ clip, skin, tape }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const dur = Math.max(1, Math.round((clip.end - clip.start) * fps));
@@ -121,10 +122,10 @@ const ShotClip: React.FC<{ clip: Clip }> = ({ clip }) => {
   return (
     <AbsoluteFill style={{ overflow: "hidden", background: "#000" }}>
       <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: origin }}>
-        <ShotMedia clip={clip} fps={fps} />
+        <ShotMedia clip={clip} fps={fps} skin={skin} />
       </AbsoluteFill>
-      {clip.grade === "2002" ? <VhsLayer /> : <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, transparent 58%, rgba(10,4,7,0.45) 100%)", pointerEvents: "none" }} />}
-      {clip.grade === "2026" ? <AbsoluteFill style={{ boxShadow: "inset 0 0 80px rgba(241,64,155,0.08)", pointerEvents: "none" }} /> : null}
+      {clip.grade === "2002" && !tape ? <VhsLayer /> : null}
+      {clip.grade === "2026" ? <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, transparent 58%, rgba(10,4,7,0.45) 100%)", boxShadow: "inset 0 0 80px rgba(241,64,155,0.08)", pointerEvents: "none" }} /> : null}
       <TransitionLayer blend={clip.transitionOut} durFrames={dur} />
     </AbsoluteFill>
   );
@@ -148,29 +149,37 @@ export const GtafolioVideo: React.FC<{ edl: Edl }> = ({ edl }) => {
   const { fps } = useVideoConfig();
   const total = Math.round(edl.duration * fps);
   const at = (seconds: number) => Math.round(seconds * fps);
+  const skin = edl.skin ?? "2002";
+  const tape = edl.vhs?.enabled !== false;
+  const strength = edl.vhs?.strength ?? 0.42;
+  const footageFilter = tape ? `saturate(${(1 + 0.22 * strength).toFixed(3)}) contrast(${(1 + 0.05 * strength).toFixed(3)})` : undefined;
   return (
-    <AbsoluteFill style={{ background: PAL["2026"].ink }}>
-      {edl.clips.map((clip, index) => {
-        const from = at(clip.start);
-        const next = index + 1 < edl.clips.length ? at(edl.clips[index + 1].start) : at(clip.end);
-        const dur = Math.max(1, next - from);
-        return (
-          <Sequence key={clip.id} from={from} durationInFrames={dur} name={clip.id}>
-            <ShotClip clip={clip} />
-          </Sequence>
-        );
-      })}
+    <AbsoluteFill style={{ background: PAL[skin].ink }}>
+      <AbsoluteFill style={{ filter: footageFilter }}>
+        {edl.clips.map((clip, index) => {
+          const from = at(clip.start);
+          const next = index + 1 < edl.clips.length ? at(edl.clips[index + 1].start) : at(clip.end);
+          const dur = Math.max(1, next - from);
+          return (
+            <Sequence key={clip.id} from={from} durationInFrames={dur} name={clip.id}>
+              <ShotClip clip={clip} skin={skin} tape={tape} />
+            </Sequence>
+          );
+        })}
+      </AbsoluteFill>
+      {tape ? <VhsLayer look="footage" strength={strength} /> : null}
       {edl.overlays.map((overlay) => {
         const from = at(overlay.start);
         const dur = Math.max(1, at(overlay.end) - from);
+        const event = { ...overlay, skin: overlay.skin ?? skin };
         return (
           <Sequence key={overlay.id} from={from} durationInFrames={dur} name={`${overlay.component} ${overlay.id}`}>
-            <OverlayView event={overlay} durFrames={dur} />
+            <OverlayView event={event} durFrames={dur} />
           </Sequence>
         );
       })}
       {edl.captions.enabled ? (
-        <KaraokeCaptions words={edl.captions.words} overlays={edl.overlays} maxWords={edl.captions.maxWords} safe={edl.captions.safeArea} />
+        <KaraokeCaptions words={edl.captions.words} overlays={edl.overlays} maxWords={edl.captions.maxWords} safe={edl.captions.safeArea} skin={skin} />
       ) : null}
       <Audio src={staticFile(edl.narration.file)} volume={edl.narration.volume} />
       {edl.music.map((track) => (

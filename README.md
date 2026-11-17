@@ -97,11 +97,13 @@ An episode object (`--in episode.json`) works too, with `narration`, `words`, `s
 
 Clips must meet: the first starts at 0, each next starts where the previous ends (within one frame), and the last ends at `duration`. Peak overlap of overlays is 2. The validator rejects an em dash anywhere in the JSON.
 
-Placeholder clips draw the dusk, day, or night plate (or a two-colour gradient) plus a small label, with Ken Burns. Swap `kind` to `video` or `still` and point `source_file` at a file under the footage root when the picture arrives. `src_in` / `src_out` are source seconds. Playback rate is `speed`, or `(src_out - src_in) / (end - start)` when speed is omitted. Crop is fractional `x, y, w, h`. Ken Burns is `zoomFrom`, `zoomTo`, and optional `origin` / `originTo`. `grade` of `2002` adds the VHS layer. `transitionOut` is `cut`, `dip`, `flash`, or `wipe`.
+Placeholder clips draw the dusk, day, or night plate (or a two-colour gradient) plus a small label, with Ken Burns. Swap `kind` to `video` or `still` and point `source_file` at a file under the footage root when the picture arrives. `src_in` / `src_out` are source seconds. Playback rate is `speed`, or `(src_out - src_in) / (end - start)` when speed is omitted. Crop is fractional `x, y, w, h`. Ken Burns is `zoomFrom`, `zoomTo`, and optional `origin` / `originTo`. `transitionOut` is `cut`, `dip`, `flash`, or `wipe`. `grade` of `2026` adds the HDR vignette on that clip. `grade` of `2002` adds the full tape plate on that clip when the channel tape pass is off.
 
 ## Overlays
 
-The design source is the Sunshine State Broadcast system: a 640x360 stage drawn at 1920x1080 with CSS zoom so type stays sharp, a 6.2 second cycle, and frame-based motion (`useCurrentFrame`, `interpolate`, `spring`). Skins are `2026` (sunset HDR) and `2002` (VHS). Modes are `gallery` (plate plus guide notes), `cutaway` (full plate), and `lower` (foreground over footage).
+The design source is the Sunshine State Broadcast system: a 640x360 stage drawn at 1920x1080 with CSS zoom so type stays sharp, a 6.2 second cycle, and frame-based motion (`useCurrentFrame`, `interpolate`, `spring`). The channel skin is Vice 2002 VHS (`edl.skin`, default `"2002"`): palette, `saturate(1.3) contrast(1.06)`, scanlines, an 8 px pixel grid, a tracking band, chroma, VT323 for the tape readout, and JetBrains Mono for camera labels. `"2026"` keeps the HDR sunset skin. An overlay's own `skin` overrides the channel for that event. The then-vs-now wipe ignores the switch and always paints 2002 on the left and 2026 on the right. Modes are `gallery` (plate plus guide notes), `cutaway` (full plate), and `lower` (foreground over footage).
+
+`vhs` on the EDL is the picture pass: `{ "enabled": true, "strength": 0.42 }`. It sits on the footage only, under the overlays, with lighter scanlines, a chroma fringe, and a tracking band about twice a minute. Set `enabled` to false for a clean picture. `strength` runs from 0 to 1. Noise is hashed from the frame so a still matches a render.
 
 The logo gradient is `#3D5BC9`, `#8E4CD0`, `#CA27BE`, `#F1409B`, `#F3657B`, `#F68C5A` with a plum `#200432` stroke.
 

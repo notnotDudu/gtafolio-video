@@ -169,7 +169,8 @@ type OverlayBase = {
   id: string;
   start: number;
   end: number;
-  skin: Skin;
+  /** Omitted overlays inherit edl.skin. */
+  skin?: Skin;
   mode: OverlayMode;
 };
 
@@ -259,6 +260,13 @@ export type Captions = {
   words: WordStamp[];
 };
 
+/** Full-frame tape over the picture. Plates and the wipe paint their own treatment. */
+export type VhsPass = {
+  enabled: boolean;
+  /** 0 is clean, 1 is the plate recipe. The channel default stays low so gameplay stays readable. */
+  strength?: number;
+};
+
 export type Edl = {
   id: string;
   title: string;
@@ -266,6 +274,9 @@ export type Edl = {
   width: number;
   height: number;
   duration: number;
+  /** Channel skin. 2002 is the Vice VHS look. 2026 is the HDR sunset look. */
+  skin: Skin;
+  vhs?: VhsPass;
   narration: { file: string; volume: number };
   music: AudioEvent[];
   sfx: AudioEvent[];
@@ -311,6 +322,8 @@ export type EpisodeInput = {
   width?: number;
   height?: number;
   duration: number;
+  skin?: Skin;
+  vhs?: VhsPass;
   narration: { file: string; volume?: number };
   music?: AudioEvent[];
   sfx?: AudioEvent[];

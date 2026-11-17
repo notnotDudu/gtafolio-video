@@ -22,7 +22,7 @@
           "stamp": "2012"
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -41,10 +41,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -76,7 +75,7 @@
           "nowLabel": "GTA VI page"
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -103,10 +102,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -141,10 +139,9 @@
           "clock": "STORE"
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -182,10 +179,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -219,10 +215,9 @@
           "stamp": "OFFICIAL"
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -268,10 +263,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.02,
       "zoomTo": 1.34,
@@ -303,7 +297,7 @@
           "nowLabel": "Weapon pattern"
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -322,10 +316,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -363,10 +356,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -416,10 +408,9 @@
           "tag": ""
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -490,10 +481,9 @@
           ]
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -524,10 +514,9 @@
           "caption": "a taxi company, a car showroom, and a few clubs"
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -561,10 +550,9 @@
           "tag": ""
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -611,7 +599,7 @@
           ]
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -630,10 +618,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -679,10 +666,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -720,10 +706,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -757,10 +742,9 @@
           "tag": ""
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -792,7 +776,7 @@
           "nowLabel": "Same beach"
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -819,10 +803,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -852,7 +835,7 @@
           "ticker": "Jason and Lucia outside the neon   /   2002 safehouse   /   caption never names Tommy   /   label stays at same name   /   "
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -871,10 +854,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -916,7 +898,7 @@
           "pan": 20
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -935,10 +917,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -968,10 +949,9 @@
           "ticker": "Exit 21B Shorefront Ave   /   Shitzu Squalo copy   /   a 2002 district, named again   /   "
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -1024,7 +1004,7 @@
           ]
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -1043,10 +1023,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -1161,7 +1140,7 @@
           "credit": "Stylized stand-in. Yanis v16 Leonida map is CC BY 4.0 if that art is used."
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       },
       {
         "component": "citation",
@@ -1180,10 +1159,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -1226,10 +1204,9 @@
           "subscribed": "Subscribed"
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -1271,10 +1248,9 @@
           "pan": 30
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -1312,10 +1288,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -1361,10 +1336,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -1410,10 +1384,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -1443,10 +1416,9 @@
           "ticker": "Purchases before 20 Nov 2026   /   launch week buyers get the pattern   /   support page   /   "
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -1497,10 +1469,9 @@
           ]
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -1551,10 +1522,9 @@
           "tag": ""
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2002",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
@@ -1592,10 +1562,9 @@
           ]
         },
         "mode": "lower",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.04,
       "zoomTo": 1.12,
@@ -1640,10 +1609,9 @@
           ]
         },
         "mode": "cutaway",
-        "skin": "2026"
+        "skin": "2002"
       }
     ],
-    "grade": "2026",
     "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,

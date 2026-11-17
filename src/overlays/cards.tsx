@@ -12,7 +12,7 @@ const abs: React.CSSProperties = { position: "absolute" };
 
 export const Postcard: React.FC<Host & PostcardProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   line1 = "STARFISH",
@@ -98,7 +98,7 @@ const DEFAULT_ROWS = [
 
 export const RapSheet: React.FC<Host & RapProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   file = "Rap sheet / File 001",
@@ -197,7 +197,7 @@ const stampPop = (frame: number, fps: number, delayMs: number): React.CSSPropert
 
 export const EndCard: React.FC<Host & EndProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   clock = "22:41",

@@ -5,7 +5,7 @@ import { validateEdl } from "./validate-edl";
 
 type CueProps = Record<string, unknown>;
 
-const cue = (component: OverlayName, start: number, end: number, props: CueProps, mode: "cutaway" | "lower" = "cutaway", skin: "2026" | "2002" = "2026"): ShotListCue => ({
+const cue = (component: OverlayName, start: number, end: number, props: CueProps, mode: "cutaway" | "lower" = "cutaway", skin: "2026" | "2002" = "2002"): ShotListCue => ({
   component,
   start,
   end,
@@ -32,7 +32,6 @@ const cut = (end: number, note: string, source: string, beat: number, overlay: S
     kind: "placeholder",
     note,
     overlay_cue: overlay,
-    grade: "2026",
     kenBurns: shots.length % 2 === 0 ? { zoomFrom: 1.04, zoomTo: 1.12, origin: "50% 42%" } : { zoomFrom: 1.12, zoomTo: 1.04, origin: "62% 58%" },
     placeholder: { variant: (["dusk", "night", "day"] as const)[shots.length % 3], label: note },
     ...extra,
@@ -87,7 +86,7 @@ cut(75.2, "Shirt pattern against the weapon pattern", "gta6/vintage-vice-city-we
 
 cut(82.72, "Only time the marketing names Tommy", "vc/tommy-teal-shirt.jpg", 1, [
   cue("citation", 75.4, 82.5, { chips: [chip("Once", "Only time Rockstar names Tommy in GTA VI marketing", 22, 22)] }, "lower"),
-], { grade: "2002" });
+]);
 
 cut(98.2, "Tommy arrives in Vice City, 1986", "vc/in-the-beginning.jpg", 2, [
   cue("rap", 82.9, 97.9, {
@@ -102,7 +101,7 @@ cut(98.2, "Tommy arrives in Vice City, 1986", "vc/in-the-beginning.jpg", 2, [
     heat: 2,
     tag: "",
   }),
-], { grade: "2002" });
+]);
 
 cut(118.4, "Ocean View Hotel, then the mansion", "vc/ocean-view-hotel.jpg", 2, [
   cue("map", 98.4, 118.2, {
@@ -122,15 +121,15 @@ cut(118.4, "Ocean View Hotel, then the mansion", "vc/ocean-view-hotel.jpg", 2, [
       { tone: "warm", label: "Diaz mansion" },
     ],
   }),
-], { grade: "2002" });
+]);
 
 cut(130.6, "Assets: cab, showroom, clubs", "vc/asset-purchases.jpg", 2, [
   cue("counter", 118.6, 130.4, { to: 3, label: "Assets", caption: "a taxi company, a car showroom, and a few clubs" }),
-], { grade: "2002" });
+]);
 
 cut(141.04, "Finale at the mansion, 3D universe", "vc/keep-your-friends-close.jpg", 2, [
   cue("beat", 130.8, 140.85, { chapter: "What fans call it", title: "3D UNIVERSE", progressLabel: "File", progress: 1, progressText: "ONE WORLD", tag: "" }),
-], { grade: "2002" });
+]);
 
 cut(168.7, "Three universes, 2D, 3D, HD", "gta4/rip-wall.jpg", 3, [
   cue("timeline", 141.15, 168.5, {
@@ -217,7 +216,7 @@ cut(342.4, "Districts named again, missing, unconfirmed", "vc/district-name-card
     credit: "Stylized stand-in. Yanis v16 Leonida map is CC BY 4.0 if that art is used.",
   }),
   cue("citation", 317.6, 341.9, { chips: [chip("Badge", "OFFICIAL / UNCONFIRMED", 22, 24)] }, "lower"),
-], { grade: "2002" });
+]);
 
 cut(357.36, "Subscribe ask, launch week follow-up", "plates/subscribe.jpg", 5, [
   cue("end", 342.6, 357.15, {
@@ -285,7 +284,7 @@ cut(480.2, "Number one, the file flips to legend", "vc/mansion-finale.jpg", 7, [
     ],
     tag: "",
   }),
-], { grade: "2002" });
+]);
 
 cut(488, "Only in Leonida, still the sun and fun capital", "gta6/only-in-leonida.jpg", 7, [
   cue("citation", 480.45, 487.75, { chips: [chip("Page", "Only in Leonida. A long way from the eighties.", 22, 22)] }, "lower"),
@@ -317,6 +316,8 @@ const episode = {
   width: 1920,
   height: 1080,
   duration: 503.5,
+  skin: "2002" as const,
+  vhs: { enabled: true, strength: 0.42 },
   narration: { file: "audio/narration.mp3", volume: 1 },
   music: [
     {

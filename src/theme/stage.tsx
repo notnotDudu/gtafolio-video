@@ -3,9 +3,26 @@ import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { Skin } from "./palette";
 import { exitStyle, loop01 } from "./motion";
 
-const SkinContext = createContext<Skin>("2026");
+const SkinContext = createContext<Skin>("2002");
 
 export const useSkin = () => useContext(SkinContext);
+
+export const SkinProvider: React.FC<{ skin: Skin; children: React.ReactNode }> = ({ skin, children }) => (
+  <SkinContext.Provider value={skin}>{children}</SkinContext.Provider>
+);
+
+/** gfChroma is a 2-step shadow. scale is 1 in the 640 stage and about 3 on full-frame captions. */
+export const chromaShadow = (frame: number, fps: number, scale = 1) => {
+  const wide = Math.floor(loop01(frame, fps, 300) * 2) % 2 === 0;
+  const left = (wide ? 2 : 3) * scale;
+  const right = (wide ? 2 : 1) * scale;
+  return `-${left}px 0 rgba(255,46,136,0.85), ${right}px 0 rgba(25,227,255,0.85)`;
+};
+
+const hash01 = (seed: number) => {
+  const x = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
+  return x - Math.floor(x);
+};
 
 type ZoomStyle = React.CSSProperties & { zoom?: number };
 
@@ -17,14 +34,15 @@ const designStyle: ZoomStyle = {
 };
 
 export const Frame: React.FC<{ skin?: Skin; texture?: "grain" | "vhs" | "none"; children: React.ReactNode }> = ({
-  skin = "2026",
+  skin = "2002",
   texture = "grain",
   children,
 }) => {
+  const filtered: ZoomStyle = texture === "vhs" ? { ...designStyle, filter: "saturate(1.3) contrast(1.06)" } : designStyle;
   return (
     <SkinContext.Provider value={skin}>
       <AbsoluteFill style={{ overflow: "hidden" }}>
-        <div style={designStyle}>
+        <div style={filtered}>
           {children}
           {texture === "vhs" ? <VhsLayer /> : null}
           {texture === "grain" ? <GrainLayer /> : null}
@@ -83,44 +101,106 @@ const GrainLayer: React.FC = () => {
   );
 };
 
-export const VhsLayer: React.FC<{ osd?: string }> = ({ osd = "PLAY  \u25B6   SP   OCT 1986" }) => {
+export const VhsLayer: React.FC<{ osd?: string; look?: "plate" | "footage"; strength?: number }> = ({
+  osd = "PLAY  \u25B6   SP   OCT 1986",
+  look = "plate",
+  strength = 1,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const band = loop01(frame, fps, 3800);
-  const y = -80 + band * 520;
-  const chroma = Math.floor(loop01(frame, fps, 300) * 2) % 2 === 0;
+  const plate = look === "plate";
+  const gain = plate ? 1 : Math.min(1, Math.max(0, strength));
+  const unit = plate ? 1 : 3;
+  const band = loop01(frame, fps, plate ? 3800 : 2600);
+  const burstFrames = Math.max(1, Math.round(fps * 0.5));
+  const period = Math.max(burstFrames + 1, Math.round(fps * 7));
+  const phase = ((frame % period) + period) % period;
+  const showBand = plate || phase < burstFrames;
+  const y = plate ? -80 + band * 520 : -80 + (phase / burstFrames) * 1240;
+  const wobble = (hash01(frame * 3 + 1) - 0.5) * (plate ? 1.6 : 2.2 * gain);
+  const tear = hash01(Math.floor(frame / 8) + 9) > (plate ? 0.84 : 0.9);
+  const tearY = hash01(Math.floor(frame / 8) + 4) * (plate ? 360 : 1080);
+  const scan = plate ? 0.24 : 0.4 * gain;
+  const grid = plate ? 0.1 : 0.18 * gain;
   return (
     <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-      <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(0deg, rgba(0,0,0,0.24) 0px, rgba(0,0,0,0.24) 1px, transparent 1px, transparent 3px)" }} />
       <div
         style={{
           position: "absolute",
-          left: 0,
-          right: 0,
-          top: y,
-          height: 34,
-          background: "linear-gradient(180deg, transparent, rgba(255,255,255,0.10) 40%, rgba(255,255,255,0.02) 60%, transparent)",
+          inset: 0,
+          background: `repeating-linear-gradient(90deg, rgba(0,0,0,${grid}) 0px, rgba(0,0,0,${grid}) ${unit}px, transparent ${unit}px, transparent ${8 * unit}px), repeating-linear-gradient(0deg, rgba(0,0,0,${grid}) 0px, rgba(0,0,0,${grid}) ${unit}px, transparent ${unit}px, transparent ${8 * unit}px)`,
         }}
       />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 95% at 50% 50%, transparent 58%, rgba(10,0,25,0.65))" }} />
       <div
         style={{
           position: "absolute",
-          left: 0,
-          right: 0,
-          top: 10,
-          textAlign: "center",
-          fontFamily: "VT323, monospace",
-          fontSize: 16,
-          letterSpacing: "0.08em",
-          color: "#FFFFFF",
-          textShadow: chroma
-            ? "-2px 0 rgba(255,46,136,0.85), 2px 0 rgba(25,227,255,0.85)"
-            : "-3px 0 rgba(255,46,136,0.85), 1px 0 rgba(25,227,255,0.85)",
+          inset: 0,
+          background: `repeating-linear-gradient(0deg, rgba(0,0,0,${scan}) 0px, rgba(0,0,0,${scan}) ${unit}px, transparent ${unit}px, transparent ${3 * unit}px)`,
         }}
-      >
-        {osd}
-      </div>
+      />
+      {showBand ? (
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: y,
+            height: 34 * unit,
+            transform: `translateX(${wobble}px)`,
+            background: "linear-gradient(180deg, transparent, rgba(255,255,255,0.10) 40%, rgba(255,255,255,0.02) 60%, transparent)",
+            opacity: plate ? 1 : 0.8,
+          }}
+        />
+      ) : null}
+      {tear ? (
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: tearY,
+            height: 2 * unit,
+            background: `rgba(255,255,255,${plate ? 0.16 : 0.1 * gain})`,
+            transform: `translateX(${(hash01(frame + 2) - 0.5) * 10}px)`,
+          }}
+        />
+      ) : null}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: plate
+            ? "radial-gradient(120% 95% at 50% 50%, transparent 58%, rgba(10,0,25,0.65))"
+            : `radial-gradient(120% 95% at 50% 50%, transparent 70%, rgba(10,0,25,${0.22 * gain}))`,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          mixBlendMode: "screen",
+          boxShadow: `inset ${unit + 1}px 0 0 rgba(255,46,136,${plate ? 0.45 : 0.34 * gain}), inset -${unit + 1}px 0 0 rgba(25,227,255,${plate ? 0.45 : 0.34 * gain})`,
+        }}
+      />
+      {plate ? (
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 10,
+            textAlign: "center",
+            fontFamily: "VT323, monospace",
+            fontSize: 18,
+            letterSpacing: "0.08em",
+            color: "#FFFFFF",
+            transform: `translateX(${wobble}px)`,
+            textShadow: chromaShadow(frame, fps),
+          }}
+        >
+          {osd}
+        </div>
+      ) : null}
     </div>
   );
 };

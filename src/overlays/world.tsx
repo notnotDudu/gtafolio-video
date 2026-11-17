@@ -28,7 +28,7 @@ const DEFAULT_ROUTE = "M322 182 C350 196 372 214 392 236 C410 256 420 272 430 29
 
 export const GpsMap: React.FC<Host & MapProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   blips = [
@@ -149,7 +149,7 @@ export const GpsMap: React.FC<Host & MapProps> = ({
 
 export const VhsWipe: React.FC<Host & WipeProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   showGuide,
   thenYear = "2002",
   thenLabel = "GTA Vice City",
@@ -159,6 +159,7 @@ export const VhsWipe: React.FC<Host & WipeProps> = ({
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  void skin;
   const p = PAL["2026"];
   const vhs = PAL["2002"];
   const reveal = progress(frame, fps, 700, 900, EASE.glide);
@@ -171,7 +172,7 @@ export const VhsWipe: React.FC<Host & WipeProps> = ({
     ? "-2px 0 rgba(255,46,136,0.85), 2px 0 rgba(25,227,255,0.85)"
     : "-3px 0 rgba(255,46,136,0.85), 1px 0 rgba(25,227,255,0.85)";
   return (
-    <Frame skin={skin} texture="grain">
+    <Frame skin="2026" texture="grain">
       <div style={{ ...abs, inset: 0, filter: "saturate(1.4) contrast(1.1)" }}>
         <Scene variant="dusk" skin="2002" uid={`${thenYear}-vhs`} />
         <div style={{ ...abs, inset: 0, background: "repeating-linear-gradient(90deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 8px), repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 1px, transparent 1px, transparent 3px)" }} />
@@ -210,7 +211,7 @@ const DEFAULT_SIGNS: TimelineSign[] = [
 
 export const HighwayTimeline: React.FC<Host & TimelineProps> = ({
   durFrames,
-  skin = "2026",
+  skin = "2002",
   mode = "cutaway",
   showGuide,
   signs = DEFAULT_SIGNS,

@@ -9,7 +9,7 @@ import { unexpected } from "../theme/never";
 import { GALLERY_HOLD, GALLERY_ITEMS } from "./catalog";
 
 const Slide: React.FC<{ id: OverlayName }> = ({ id }) => {
-  const host = { durFrames: GALLERY_HOLD, mode: "gallery" as const, showGuide: true, skin: "2026" as const };
+  const host = { durFrames: GALLERY_HOLD, mode: "gallery" as const, showGuide: true, skin: "2002" as const };
   switch (id) {
     case "lockup":
       return <Lockup {...host} />;

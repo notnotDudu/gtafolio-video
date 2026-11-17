@@ -37,17 +37,18 @@ const impact = (name: OverlayName): { file: string; volume: number } | null => {
   }
 };
 
-const asCue = (cue: ShotListCue, fallbackStart: number, fallbackEnd: number, index: number): OverlayEvent => {
+const asCue = (cue: ShotListCue, fallbackStart: number, fallbackEnd: number, index: number, skin: EpisodeInput["skin"]): OverlayEvent => {
+  const channel = skin ?? "2002";
   if (typeof cue === "string") {
     if (!isOverlayName(cue)) throw new Error(`Unknown overlay ${cue}`);
-    return assemble(cue, { id: `ov-${index}`, start: fallbackStart, end: fallbackEnd, skin: "2026", mode: "cutaway", props: {} });
+    return assemble(cue, { id: `ov-${index}`, start: fallbackStart, end: fallbackEnd, skin: channel, mode: "cutaway", props: {} });
   }
   if (!isOverlayName(cue.component)) throw new Error(`Unknown overlay ${cue.component}`);
   return assemble(cue.component, {
     id: cue.id ?? `ov-${index}`,
     start: cue.start ?? fallbackStart,
     end: cue.end ?? fallbackEnd,
-    skin: cue.skin ?? "2026",
+    skin: cue.skin ?? channel,
     mode: cue.mode ?? "cutaway",
     props: cue.props ?? {},
   });
@@ -92,7 +93,7 @@ export const shotListToEdl = (episode: EpisodeInput): Edl => {
   const overlays: OverlayEvent[] = [];
   episode.shots.forEach((row) => {
     for (const cue of cuesOf(row)) {
-      overlays.push(asCue(cue, row.start, row.end, overlays.length + 1));
+      overlays.push(asCue(cue, row.start, row.end, overlays.length + 1, episode.skin));
     }
   });
   const sfx: AudioEvent[] = [...(episode.sfx ?? [])];
@@ -115,6 +116,8 @@ export const shotListToEdl = (episode: EpisodeInput): Edl => {
     width: episode.width ?? 1920,
     height: episode.height ?? 1080,
     duration: episode.duration,
+    skin: episode.skin ?? "2002",
+    vhs: episode.vhs ?? { enabled: true, strength: 0.42 },
     narration: { file: episode.narration.file, volume: episode.narration.volume ?? 1 },
     music: episode.music ?? [],
     sfx,
