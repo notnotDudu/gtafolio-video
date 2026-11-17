@@ -1,0 +1,37 @@
+{
+  "name": "gtafolio-video",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GTAFolio Remotion editor. Data-driven edits from an EDL, Sunshine State Broadcast overlays.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "tsx scripts/render-full.ts",
+    "render:chunk": "tsx scripts/render-chunk.ts",
+    "stills": "tsx scripts/render-stills.ts",
+    "edl:pilot": "tsx scripts/build-pilot-edl.ts",
+    "edl:check": "tsx scripts/validate-edl.ts src/edl/pilot.json",
+    "footage:link": "tsx scripts/link-footage.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src scripts",
+    "check": "npm run edl:check && npm run typecheck && npm run lint"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.539",
+    "@types/node": "22.19.1",
+    "@types/react": "19.2.7",
+    "eslint": "9.39.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

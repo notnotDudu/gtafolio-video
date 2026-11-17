@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gtafolio.local/schema/edl.schema.json",
+  "title": "GTAFolio edit decision list",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "fps", "width", "height", "duration", "narration", "music", "sfx", "clips", "overlays", "captions"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "fps": { "type": "number", "minimum": 1 },
+    "width": { "type": "number" },
+    "height": { "type": "number" },
+    "duration": { "type": "number", "minimum": 0 },
+    "narration": { "$ref": "#/$defs/narration" },
+    "music": { "type": "array", "items": { "$ref": "#/$defs/audio" } },
+    "sfx": { "type": "array", "items": { "$ref": "#/$defs/audio" } },
+    "clips": { "type": "array", "items": { "$ref": "#/$defs/clip" } },
+    "overlays": { "type": "array", "items": { "$ref": "#/$defs/overlay" } },
+    "captions": { "$ref": "#/$defs/captions" }
+  },
+  "$defs": {
+    "narration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "volume"],
+      "properties": {
+        "file": { "type": "string" },
+        "volume": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "duck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["under", "to", "near", "far"],
+      "properties": {
+        "under": { "const": "narration" },
+        "to": { "type": "number", "minimum": 0, "maximum": 1 },
+        "near": { "type": "number", "minimum": 0 },
+        "far": { "type": "number", "minimum": 0 }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "file", "start", "volume"],
+      "properties": {
+        "id": { "type": "string" },
+        "file": { "type": "string" },
+        "start": { "type": "number", "minimum": 0 },
+        "end": { "type": "number" },
+        "volume": { "type": "number", "minimum": 0, "maximum": 1 },
+        "fadeIn": { "type": "number", "minimum": 0 },
+        "fadeOut": { "type": "number", "minimum": 0 },
+        "loop": { "type": "boolean" },
+        "duck": { "$ref": "#/$defs/duck" }
+      }
+    },
+    "crop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "w", "h"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "w": { "type": "number", "exclusiveMinimum": 0 },
+        "h": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "kenBurns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zoomFrom", "zoomTo"],
+      "properties": {
+        "zoomFrom": { "type": "number", "exclusiveMinimum": 0 },
+        "zoomTo": { "type": "number", "exclusiveMinimum": 0 },
+        "origin": { "type": "string" },
+        "originTo": { "type": "string" }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "duration"],
+      "properties": {
+        "type": { "enum": ["cut", "dip", "flash", "wipe"] },
+        "duration": { "type": "number", "minimum": 0 }
+      }
+    },
+    "placeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "variant": { "enum": ["dusk", "day", "night"] },
+        "label": { "type": "string" },
+        "colors": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 }
+      }
+    },
+    "clip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "file", "srcIn", "srcOut", "start", "end"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "enum": ["video", "still", "placeholder"] },
+        "file": { "type": "string", "description": "Path under FOOTAGE_ROOT for video and still. For a placeholder, the intended footage path." },
+        "srcIn": { "type": "number", "minimum": 0 },
+        "srcOut": { "type": "number", "minimum": 0 },
+        "start": { "type": "number", "minimum": 0 },
+        "end": { "type": "number", "minimum": 0 },
+        "speed": { "type": "number", "exclusiveMinimum": 0 },
+        "crop": { "$ref": "#/$defs/crop" },
+        "kenBurns": { "$ref": "#/$defs/kenBurns" },
+        "grade": { "enum": ["2026", "2002", "none"] },
+        "transitionOut": { "$ref": "#/$defs/transition" },
+        "placeholder": { "$ref": "#/$defs/placeholder" },
+        "note": { "type": "string" }
+      }
+    },
+    "word": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["word", "start", "end"],
+      "properties": {
+        "word": { "type": "string" },
+        "start": { "type": "number", "minimum": 0 },
+        "end": { "type": "number", "minimum": 0 }
+      }
+    },
+    "safeArea": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top", "right", "bottom", "left"],
+      "properties": {
+        "top": { "type": "number" },
+        "right": { "type": "number" },
+        "bottom": { "type": "number" },
+        "left": { "type": "number" }
+      }
+    },
+    "captions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "style", "safeArea", "maxWords", "words"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "style": { "const": "karaoke" },
+        "safeArea": { "$ref": "#/$defs/safeArea" },
+        "maxWords": { "type": "integer", "minimum": 1 },
+        "words": { "type": "array", "items": { "$ref": "#/$defs/word" } }
+      }
+    },
+    "overlayName": {
+      "enum": ["lockup", "presents", "postcard", "chyron", "social", "cctv", "map", "wipe", "counter", "beat", "rap", "timeline", "citation", "shortsCaptions", "end"]
+    },
+    "overlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "component", "start", "end", "skin", "mode", "props"],
+      "properties": {
+        "id": { "type": "string" },
+        "component": { "$ref": "#/$defs/overlayName" },
+        "start": { "type": "number", "minimum": 0 },
+        "end": { "type": "number", "minimum": 0 },
+        "skin": { "enum": ["2026", "2002"] },
+        "mode": { "enum": ["gallery", "cutaway", "lower"], "description": "gallery is the style-guide plate. cutaway replaces the picture. lower sits on the footage." },
+        "props": { "type": "object" }
+      }
+    },
+    "shotListRow": {
+      "type": "object",
+      "required": ["beat", "start", "end", "source_file", "src_in", "src_out", "kind", "note"],
+      "properties": {
+        "beat": { "type": "number" },
+        "start": { "type": "number" },
+        "end": { "type": "number" },
+        "source_file": { "type": "string" },
+        "src_in": { "type": "number" },
+        "src_out": { "type": "number" },
+        "kind": { "enum": ["video", "still", "placeholder"] },
+        "note": { "type": "string" },
+        "overlay_cue": {
+          "description": "A component name, one cue object, or an array of cue objects.",
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/overlayName" },
+            { "$ref": "#/$defs/cue" },
+            { "type": "array", "items": { "oneOf": [{ "$ref": "#/$defs/overlayName" }, { "$ref": "#/$defs/cue" }] } }
+          ]
+        }
+      }
+    },
+    "cue": {
+      "type": "object",
+      "required": ["component"],
+      "properties": {
+        "component": { "$ref": "#/$defs/overlayName" },
+        "props": { "type": "object" },
+        "start": { "type": "number" },
+        "end": { "type": "number" },
+        "skin": { "enum": ["2026", "2002"] },
+        "mode": { "enum": ["gallery", "cutaway", "lower"] },
+        "id": { "type": "string" }
+      }
+    }
+  }
+}

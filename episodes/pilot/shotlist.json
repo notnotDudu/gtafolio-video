@@ -1,0 +1,1657 @@
+[
+  {
+    "beat": 0,
+    "start": 0,
+    "end": 8.3,
+    "source_file": "stills/houser-game-informer-2012.jpg",
+    "src_in": 0,
+    "src_out": 8.3,
+    "kind": "placeholder",
+    "note": "Houser quote, Game Informer 2012",
+    "overlay_cue": [
+      {
+        "component": "cctv",
+        "start": 0.25,
+        "end": 7.7,
+        "props": {
+          "camera": "CAM 01  QUOTE TAPE",
+          "target": "Houser, 2012",
+          "exhibit": "Exhibit A / Game Informer",
+          "highlight": "mythical characters who never existed",
+          "source": "Dan Houser to Game Informer, 2012",
+          "stamp": "2012"
+        },
+        "mode": "lower",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 0.5,
+        "end": 7.4,
+        "props": {
+          "chips": [
+            {
+              "label": "Note",
+              "text": "Pre-launch only. No story spoilers.",
+              "x": 18,
+              "y": 78,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Houser quote, Game Informer 2012"
+    }
+  },
+  {
+    "beat": 0,
+    "start": 8.3,
+    "end": 18.6,
+    "source_file": "gta6/vi-product-card.jpg",
+    "src_in": 0,
+    "src_out": 10.3,
+    "kind": "placeholder",
+    "note": "2012 quote against the GTA VI page",
+    "overlay_cue": [
+      {
+        "component": "wipe",
+        "start": 8.35,
+        "end": 18.4,
+        "props": {
+          "thenYear": "2012",
+          "thenLabel": "Houser, Game Informer",
+          "nowYear": "2026",
+          "nowLabel": "GTA VI page"
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 8.7,
+        "end": 18.1,
+        "props": {
+          "chips": [
+            {
+              "label": "Then",
+              "text": "Game Informer, 2012",
+              "x": 22,
+              "y": 300,
+              "icon": "doc",
+              "delayMs": 180
+            },
+            {
+              "label": "Now",
+              "text": "rockstargames.com/VI",
+              "x": 360,
+              "y": 300,
+              "icon": "doc",
+              "delayMs": 500
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "2012 quote against the GTA VI page"
+    },
+    "transitionOut": {
+      "type": "flash",
+      "duration": 0.18
+    }
+  },
+  {
+    "beat": 0,
+    "start": 18.6,
+    "end": 26.4,
+    "source_file": "gta6/hawk-little-morgan-revolvers-02.jpg",
+    "src_in": 0,
+    "src_out": 7.8,
+    "kind": "placeholder",
+    "note": "Push in on the engraved revolvers",
+    "overlay_cue": [
+      {
+        "component": "chyron",
+        "start": 18.75,
+        "end": 26.15,
+        "props": {
+          "headline": "Whose estate is that?",
+          "ticker": "Hawk and Little Morgan revolvers   /   sourced from the Vercetti Estate   /   J Duval and L Caminos   /   ",
+          "clock": "STORE"
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Push in on the engraved revolvers"
+    }
+  },
+  {
+    "beat": 0,
+    "start": 26.4,
+    "end": 34.88,
+    "source_file": "gta6/hawk-little-morgan-revolvers-02b.jpg",
+    "src_in": 0,
+    "src_out": 8.48,
+    "kind": "placeholder",
+    "note": "Revolvers, slow push on the engravings",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 26.55,
+        "end": 34.6,
+        "props": {
+          "chips": [
+            {
+              "label": "Page",
+              "text": "GTA VI store, Hawk and Little Morgan",
+              "x": 22,
+              "y": 22,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Revolvers, slow push on the engravings"
+    }
+  },
+  {
+    "beat": 1,
+    "start": 34.88,
+    "end": 52.7,
+    "source_file": "gta6/hawk-little-morgan-revolvers-01.jpg",
+    "src_in": 0,
+    "src_out": 17.82,
+    "kind": "placeholder",
+    "note": "Official revolver copy, Ken Burns push",
+    "overlay_cue": [
+      {
+        "component": "cctv",
+        "start": 35.05,
+        "end": 52.45,
+        "props": {
+          "camera": "CAM 02  PRODUCT",
+          "target": "Vercetti Estate",
+          "exhibit": "Official copy",
+          "highlight": "sourced from the Vercetti Estate",
+          "source": "Rockstar GTA VI page. Press release adds exclusively.",
+          "stamp": "OFFICIAL"
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Official revolver copy, Ken Burns push"
+    }
+  },
+  {
+    "beat": 1,
+    "start": 52.7,
+    "end": 61.6,
+    "source_file": "gta6/revolvers-engravings.jpg",
+    "src_in": 0,
+    "src_out": 8.9,
+    "kind": "placeholder",
+    "note": "Zoom to J Duval, then L Caminos",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 52.9,
+        "end": 61.4,
+        "props": {
+          "chips": [
+            {
+              "label": "Scope",
+              "text": "J Duval",
+              "x": 22,
+              "y": 28,
+              "icon": "doc",
+              "delayMs": 180
+            },
+            {
+              "label": "Grip",
+              "text": "L Caminos, gold palm",
+              "x": 360,
+              "y": 28,
+              "icon": "doc",
+              "delayMs": 700
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.02,
+      "zoomTo": 1.34,
+      "origin": "42% 48%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Zoom to J Duval, then L Caminos"
+    }
+  },
+  {
+    "beat": 1,
+    "start": 61.6,
+    "end": 75.2,
+    "source_file": "gta6/vintage-vice-city-weapon-pattern.jpg",
+    "src_in": 0,
+    "src_out": 13.6,
+    "kind": "placeholder",
+    "note": "Shirt pattern against the weapon pattern",
+    "overlay_cue": [
+      {
+        "component": "wipe",
+        "start": 61.75,
+        "end": 74.9,
+        "props": {
+          "thenYear": "2002",
+          "thenLabel": "Tommy's shirt",
+          "nowYear": "VI",
+          "nowLabel": "Weapon pattern"
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 62.1,
+        "end": 74.6,
+        "props": {
+          "chips": [
+            {
+              "label": "Copy",
+              "text": "Inspired by the palm tree button-up",
+              "x": 22,
+              "y": 300,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Shirt pattern against the weapon pattern"
+    }
+  },
+  {
+    "beat": 1,
+    "start": 75.2,
+    "end": 82.72,
+    "source_file": "vc/tommy-teal-shirt.jpg",
+    "src_in": 0,
+    "src_out": 7.52,
+    "kind": "placeholder",
+    "note": "Only time the marketing names Tommy",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 75.4,
+        "end": 82.5,
+        "props": {
+          "chips": [
+            {
+              "label": "Once",
+              "text": "Only time Rockstar names Tommy in GTA VI marketing",
+              "x": 22,
+              "y": 22,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Only time the marketing names Tommy"
+    }
+  },
+  {
+    "beat": 2,
+    "start": 82.72,
+    "end": 98.2,
+    "source_file": "vc/in-the-beginning.jpg",
+    "src_in": 0,
+    "src_out": 15.48,
+    "kind": "placeholder",
+    "note": "Tommy arrives in Vice City, 1986",
+    "overlay_cue": [
+      {
+        "component": "rap",
+        "start": 82.9,
+        "end": 97.9,
+        "props": {
+          "file": "Vercetti file / 001",
+          "name": "TOMMY VERCETTI",
+          "rows": [
+            {
+              "label": "Set",
+              "value": "1986"
+            },
+            {
+              "label": "Game",
+              "value": "GTA Vice City, 2002"
+            },
+            {
+              "label": "Status",
+              "value": "LIVE"
+            },
+            {
+              "label": "First stop",
+              "value": "A deal that goes wrong"
+            }
+          ],
+          "heat": 2,
+          "tag": ""
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Tommy arrives in Vice City, 1986"
+    }
+  },
+  {
+    "beat": 2,
+    "start": 98.2,
+    "end": 118.4,
+    "source_file": "vc/ocean-view-hotel.jpg",
+    "src_in": 0,
+    "src_out": 20.2,
+    "kind": "placeholder",
+    "note": "Ocean View Hotel, then the mansion",
+    "overlay_cue": [
+      {
+        "component": "map",
+        "start": 98.4,
+        "end": 118.2,
+        "props": {
+          "blips": [
+            {
+              "x": 300,
+              "y": 210,
+              "tone": "cool",
+              "letter": "H",
+              "delayMs": 400
+            },
+            {
+              "x": 430,
+              "y": 250,
+              "tone": "warm",
+              "letter": "M",
+              "delayMs": 4200
+            }
+          ],
+          "labels": [
+            {
+              "x": 300,
+              "y": 180,
+              "text": "OCEAN VIEW",
+              "delayMs": 700
+            },
+            {
+              "x": 455,
+              "y": 286,
+              "text": "THE MANSION",
+              "delayMs": 4500
+            }
+          ],
+          "showRoute": true,
+          "route": "M300 210 C340 230 390 240 430 250",
+          "credit": "Stylized stand-in. Yanis v16 Leonida map is CC BY 4.0 if that art is used.",
+          "legend": [
+            {
+              "tone": "cool",
+              "label": "First safehouse"
+            },
+            {
+              "tone": "warm",
+              "label": "Diaz mansion"
+            }
+          ]
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Ocean View Hotel, then the mansion"
+    }
+  },
+  {
+    "beat": 2,
+    "start": 118.4,
+    "end": 130.6,
+    "source_file": "vc/asset-purchases.jpg",
+    "src_in": 0,
+    "src_out": 12.2,
+    "kind": "placeholder",
+    "note": "Assets: cab, showroom, clubs",
+    "overlay_cue": [
+      {
+        "component": "counter",
+        "start": 118.6,
+        "end": 130.4,
+        "props": {
+          "to": 3,
+          "label": "Assets",
+          "caption": "a taxi company, a car showroom, and a few clubs"
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Assets: cab, showroom, clubs"
+    }
+  },
+  {
+    "beat": 2,
+    "start": 130.6,
+    "end": 141.04,
+    "source_file": "vc/keep-your-friends-close.jpg",
+    "src_in": 0,
+    "src_out": 10.44,
+    "kind": "placeholder",
+    "note": "Finale at the mansion, 3D universe",
+    "overlay_cue": [
+      {
+        "component": "beat",
+        "start": 130.8,
+        "end": 140.85,
+        "props": {
+          "chapter": "What fans call it",
+          "title": "3D UNIVERSE",
+          "progressLabel": "File",
+          "progress": 1,
+          "progressText": "ONE WORLD",
+          "tag": ""
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Finale at the mansion, 3D universe"
+    }
+  },
+  {
+    "beat": 3,
+    "start": 141.04,
+    "end": 168.7,
+    "source_file": "gta4/rip-wall.jpg",
+    "src_in": 0,
+    "src_out": 27.66,
+    "kind": "placeholder",
+    "note": "Three universes, 2D, 3D, HD",
+    "overlay_cue": [
+      {
+        "component": "timeline",
+        "start": 141.15,
+        "end": 168.5,
+        "props": {
+          "signs": [
+            {
+              "year": "2D",
+              "caption": "Top-down worlds"
+            },
+            {
+              "year": "3D",
+              "caption": "Vice City lives"
+            },
+            {
+              "year": "HD",
+              "caption": "A new world"
+            },
+            {
+              "year": "VI",
+              "caption": "Leonida",
+              "accent": true
+            }
+          ]
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 159.4,
+        "end": 168.3,
+        "props": {
+          "chips": [
+            {
+              "label": "Source",
+              "text": "Rockstar Newswire, 18 Sep 2009",
+              "x": 22,
+              "y": 308,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Three universes, 2D, 3D, HD"
+    }
+  },
+  {
+    "beat": 3,
+    "start": 168.7,
+    "end": 186.7,
+    "source_file": "plates/newswire-2011.jpg",
+    "src_in": 0,
+    "src_out": 18,
+    "kind": "placeholder",
+    "note": "December 2011, definitions of the worlds",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 168.95,
+        "end": 186.4,
+        "props": {
+          "chips": [
+            {
+              "label": "Source",
+              "text": "Rockstar Newswire, 15 Dec 2011",
+              "x": 22,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 180
+            },
+            {
+              "label": "Rule",
+              "text": "Brands cross. 3D characters do not.",
+              "x": 22,
+              "y": 68,
+              "icon": "doc",
+              "delayMs": 900
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "December 2011, definitions of the worlds"
+    }
+  },
+  {
+    "beat": 3,
+    "start": 186.7,
+    "end": 200.5,
+    "source_file": "plates/houser-2012.jpg",
+    "src_in": 0,
+    "src_out": 13.8,
+    "kind": "placeholder",
+    "note": "2012 Houser line, same rule a third time",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 186.95,
+        "end": 200.3,
+        "props": {
+          "chips": [
+            {
+              "label": "Source",
+              "text": "Dan Houser to Game Informer, 2012",
+              "x": 22,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "2012 Houser line, same rule a third time"
+    }
+  },
+  {
+    "beat": 3,
+    "start": 200.5,
+    "end": 213.92,
+    "source_file": "plates/three-labels.jpg",
+    "src_in": 0,
+    "src_out": 13.42,
+    "kind": "placeholder",
+    "note": "Three labels for everything after this",
+    "overlay_cue": [
+      {
+        "component": "beat",
+        "start": 200.7,
+        "end": 213.7,
+        "props": {
+          "chapter": "Same name, same place, or not shown",
+          "title": "THREE LABELS",
+          "progressLabel": "Rule",
+          "progress": 1,
+          "progressText": "ASSUMED",
+          "tag": ""
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Three labels for everything after this"
+    }
+  },
+  {
+    "beat": 4,
+    "start": 213.92,
+    "end": 239,
+    "source_file": "gta6/t1-ocean-beach-neon.jpg",
+    "src_in": 0,
+    "src_out": 25.08,
+    "kind": "placeholder",
+    "note": "Ocean Beach, 1986 beside 2026",
+    "overlay_cue": [
+      {
+        "component": "wipe",
+        "start": 214.05,
+        "end": 238.8,
+        "props": {
+          "thenYear": "1986",
+          "thenLabel": "Ocean Beach",
+          "nowYear": "2026",
+          "nowLabel": "Same beach"
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 220,
+        "end": 238.5,
+        "props": {
+          "chips": [
+            {
+              "label": "Label",
+              "text": "SAME NAME",
+              "x": 22,
+              "y": 300,
+              "icon": "doc",
+              "delayMs": 180
+            },
+            {
+              "label": "Also",
+              "text": "Same place, by the look of it",
+              "x": 250,
+              "y": 300,
+              "icon": "doc",
+              "delayMs": 800
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Ocean Beach, 1986 beside 2026"
+    }
+  },
+  {
+    "beat": 4,
+    "start": 239,
+    "end": 263.2,
+    "source_file": "gta6/vintage-vice-city-ocean-view.jpg",
+    "src_in": 0,
+    "src_out": 24.2,
+    "kind": "placeholder",
+    "note": "Ocean View neon, 2002 and the pack shot",
+    "overlay_cue": [
+      {
+        "component": "chyron",
+        "start": 239.2,
+        "end": 262.9,
+        "props": {
+          "headline": "Ocean View Hotel",
+          "ticker": "Jason and Lucia outside the neon   /   2002 safehouse   /   caption never names Tommy   /   label stays at same name   /   "
+        },
+        "mode": "lower",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 239.5,
+        "end": 262.6,
+        "props": {
+          "chips": [
+            {
+              "label": "Label",
+              "text": "SAME NAME",
+              "x": 400,
+              "y": 78,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Ocean View neon, 2002 and the pack shot"
+    }
+  },
+  {
+    "beat": 4,
+    "start": 263.2,
+    "end": 285.28,
+    "source_file": "gta6/stanier-shore-drive.jpg",
+    "src_in": 0,
+    "src_out": 22.08,
+    "kind": "placeholder",
+    "note": "Shore Drive flips over Ocean Drive",
+    "overlay_cue": [
+      {
+        "component": "timeline",
+        "start": 263.4,
+        "end": 285.05,
+        "props": {
+          "signs": [
+            {
+              "year": "2002",
+              "caption": "Ocean Drive",
+              "delayMs": 12000
+            },
+            {
+              "year": "2026",
+              "caption": "Shore Drive",
+              "accent": true,
+              "delayMs": 1800
+            }
+          ],
+          "pan": 20
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 270,
+        "end": 284.8,
+        "props": {
+          "chips": [
+            {
+              "label": "Label",
+              "text": "NEW NAME",
+              "x": 22,
+              "y": 308,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Shore Drive flips over Ocean Drive"
+    }
+  },
+  {
+    "beat": 5,
+    "start": 285.28,
+    "end": 304.7,
+    "source_file": "gta6/el-exit-21b-washington.jpg",
+    "src_in": 0,
+    "src_out": 19.42,
+    "kind": "placeholder",
+    "note": "Washington Beach on the sign and the boat",
+    "overlay_cue": [
+      {
+        "component": "chyron",
+        "start": 285.5,
+        "end": 304.45,
+        "props": {
+          "headline": "Docked at Washington Beach",
+          "ticker": "Exit 21B Shorefront Ave   /   Shitzu Squalo copy   /   a 2002 district, named again   /   "
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Washington Beach on the sign and the boat"
+    }
+  },
+  {
+    "beat": 5,
+    "start": 304.7,
+    "end": 317.15,
+    "source_file": "gta6/t2-downtown-sign.jpg",
+    "src_in": 0,
+    "src_out": 12.45,
+    "kind": "placeholder",
+    "note": "Downtown, the weakest same-name",
+    "overlay_cue": [
+      {
+        "component": "map",
+        "start": 304.9,
+        "end": 316.95,
+        "props": {
+          "blips": [
+            {
+              "x": 200,
+              "y": 160,
+              "tone": "warm",
+              "letter": "D",
+              "delayMs": 300
+            }
+          ],
+          "labels": [
+            {
+              "x": 200,
+              "y": 130,
+              "text": "DOWNTOWN",
+              "delayMs": 600
+            }
+          ],
+          "showRoute": false,
+          "credit": "Stylized stand-in. Yanis v16 Leonida map is CC BY 4.0 if that art is used.",
+          "legend": [
+            {
+              "tone": "warm",
+              "label": "Weakest same name"
+            }
+          ]
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 305.2,
+        "end": 316.7,
+        "props": {
+          "chips": [
+            {
+              "label": "Label",
+              "text": "SAME NAME, weakest",
+              "x": 400,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Downtown, the weakest same-name"
+    }
+  },
+  {
+    "beat": 5,
+    "start": 317.15,
+    "end": 342.4,
+    "source_file": "vc/district-name-cards.jpg",
+    "src_in": 0,
+    "src_out": 25.25,
+    "kind": "placeholder",
+    "note": "Districts named again, missing, unconfirmed",
+    "overlay_cue": [
+      {
+        "component": "map",
+        "start": 317.3,
+        "end": 342.15,
+        "props": {
+          "showRoute": false,
+          "blips": [
+            {
+              "x": 150,
+              "y": 250,
+              "tone": "warm",
+              "letter": "O",
+              "delayMs": 200
+            },
+            {
+              "x": 210,
+              "y": 200,
+              "tone": "warm",
+              "letter": "W",
+              "delayMs": 500
+            },
+            {
+              "x": 250,
+              "y": 140,
+              "tone": "warm",
+              "letter": "D",
+              "delayMs": 800
+            },
+            {
+              "x": 340,
+              "y": 120,
+              "tone": "cool",
+              "letter": "V",
+              "delayMs": 1400
+            },
+            {
+              "x": 390,
+              "y": 170,
+              "tone": "cool",
+              "letter": "H",
+              "delayMs": 1700
+            },
+            {
+              "x": 300,
+              "y": 190,
+              "tone": "hot",
+              "letter": "S",
+              "delayMs": 2100
+            },
+            {
+              "x": 430,
+              "y": 230,
+              "tone": "cool",
+              "letter": "P",
+              "delayMs": 2500
+            }
+          ],
+          "labels": [
+            {
+              "x": 150,
+              "y": 276,
+              "text": "OCEAN",
+              "delayMs": 400
+            },
+            {
+              "x": 340,
+              "y": 100,
+              "text": "NOT SHOWN",
+              "delayMs": 1600
+            },
+            {
+              "x": 300,
+              "y": 214,
+              "text": "STARFISH?",
+              "delayMs": 2300
+            }
+          ],
+          "legend": [
+            {
+              "tone": "warm",
+              "label": "Named again"
+            },
+            {
+              "tone": "cool",
+              "label": "Not shown"
+            },
+            {
+              "tone": "hot",
+              "label": "Unconfirmed"
+            }
+          ],
+          "credit": "Stylized stand-in. Yanis v16 Leonida map is CC BY 4.0 if that art is used."
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      },
+      {
+        "component": "citation",
+        "start": 317.6,
+        "end": 341.9,
+        "props": {
+          "chips": [
+            {
+              "label": "Badge",
+              "text": "OFFICIAL / UNCONFIRMED",
+              "x": 22,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Districts named again, missing, unconfirmed"
+    }
+  },
+  {
+    "beat": 5,
+    "start": 342.4,
+    "end": 357.36,
+    "source_file": "plates/subscribe.jpg",
+    "src_in": 0,
+    "src_out": 14.96,
+    "kind": "placeholder",
+    "note": "Subscribe ask, launch week follow-up",
+    "overlay_cue": [
+      {
+        "component": "end",
+        "start": 342.6,
+        "end": 357.15,
+        "props": {
+          "variant": "corner",
+          "clock": "19:00",
+          "date": "Launch week",
+          "notes": [
+            {
+              "title": "Follow-up",
+              "body": "These places, in the real game"
+            },
+            {
+              "title": "Want the check?",
+              "body": ""
+            }
+          ],
+          "subscribe": "Subscribe",
+          "subscribed": "Subscribed"
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Subscribe ask, launch week follow-up"
+    }
+  },
+  {
+    "beat": 6,
+    "start": 357.36,
+    "end": 380.9,
+    "source_file": "gta6/revolver-serials.jpg",
+    "src_in": 0,
+    "src_out": 23.54,
+    "kind": "placeholder",
+    "note": "Serials read as 29 Oct 2002 and 31 Oct 2006",
+    "overlay_cue": [
+      {
+        "component": "timeline",
+        "start": 357.55,
+        "end": 380.7,
+        "props": {
+          "signs": [
+            {
+              "year": "29.10.02",
+              "caption": "Vice City",
+              "delayMs": 16500
+            },
+            {
+              "year": "31.10.06",
+              "caption": "Vice City Stories",
+              "accent": true,
+              "delayMs": 12500
+            }
+          ],
+          "pan": 30
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Serials read as 29 Oct 2002 and 31 Oct 2006"
+    }
+  },
+  {
+    "beat": 6,
+    "start": 380.9,
+    "end": 393.2,
+    "source_file": "plates/two-guns.jpg",
+    "src_in": 0,
+    "src_out": 12.3,
+    "kind": "placeholder",
+    "note": "Lucia matches the original, Jason the PSP",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 381.3,
+        "end": 393,
+        "props": {
+          "chips": [
+            {
+              "label": "Read",
+              "text": "Lucia: original game. Jason: Vice City Stories.",
+              "x": 22,
+              "y": 22,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Lucia matches the original, Jason the PSP"
+    }
+  },
+  {
+    "beat": 6,
+    "start": 393.2,
+    "end": 404.6,
+    "source_file": "plates/fan-reading.jpg",
+    "src_in": 0,
+    "src_out": 11.4,
+    "kind": "placeholder",
+    "note": "Fan reading, first noted by GTA Culture",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 393.4,
+        "end": 404.4,
+        "props": {
+          "chips": [
+            {
+              "label": "Badge",
+              "text": "FAN READING",
+              "x": 22,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 180
+            },
+            {
+              "label": "Source",
+              "text": "First noted by GTA Culture",
+              "x": 22,
+              "y": 68,
+              "icon": "doc",
+              "delayMs": 500
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Fan reading, first noted by GTA Culture"
+    }
+  },
+  {
+    "beat": 6,
+    "start": 404.6,
+    "end": 418.5,
+    "source_file": "gta6/weapon-pattern-beside-shirt.jpg",
+    "src_in": 0,
+    "src_out": 13.9,
+    "kind": "placeholder",
+    "note": "Inspired by, a design, not a person",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 404.8,
+        "end": 418.3,
+        "props": {
+          "chips": [
+            {
+              "label": "Label",
+              "text": "INSPIRED BY",
+              "x": 22,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 180
+            },
+            {
+              "label": "Copy",
+              "text": "Nothing says Tommy is in the game",
+              "x": 250,
+              "y": 24,
+              "icon": "doc",
+              "delayMs": 700
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Inspired by, a design, not a person"
+    }
+  },
+  {
+    "beat": 6,
+    "start": 418.5,
+    "end": 430,
+    "source_file": "gta6/support-vintage-pack.jpg",
+    "src_in": 0,
+    "src_out": 11.5,
+    "kind": "placeholder",
+    "note": "Pack goes to purchases before 20 Nov 2026",
+    "overlay_cue": [
+      {
+        "component": "chyron",
+        "start": 418.7,
+        "end": 429.75,
+        "props": {
+          "headline": "Vintage Vice City Pack",
+          "ticker": "Purchases before 20 Nov 2026   /   launch week buyers get the pattern   /   support page   /   "
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Pack goes to purchases before 20 Nov 2026"
+    }
+  },
+  {
+    "beat": 7,
+    "start": 430,
+    "end": 457.3,
+    "source_file": "plates/ranked-board.jpg",
+    "src_in": 0,
+    "src_out": 27.3,
+    "kind": "placeholder",
+    "note": "Ranked list, weakest to strongest",
+    "overlay_cue": [
+      {
+        "component": "timeline",
+        "start": 430.15,
+        "end": 457.15,
+        "props": {
+          "pan": 110,
+          "signs": [
+            {
+              "year": "05",
+              "caption": "Downtown",
+              "delayMs": 3600
+            },
+            {
+              "year": "04",
+              "caption": "Washington Beach",
+              "delayMs": 9600
+            },
+            {
+              "year": "03",
+              "caption": "Ocean Beach",
+              "delayMs": 15900
+            },
+            {
+              "year": "02",
+              "caption": "Ocean View",
+              "delayMs": 21100
+            }
+          ]
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "Ranked list, weakest to strongest"
+    }
+  },
+  {
+    "beat": 7,
+    "start": 457.3,
+    "end": 480.2,
+    "source_file": "vc/mansion-finale.jpg",
+    "src_in": 0,
+    "src_out": 22.9,
+    "kind": "placeholder",
+    "note": "Number one, the file flips to legend",
+    "overlay_cue": [
+      {
+        "component": "rap",
+        "start": 457.45,
+        "end": 480,
+        "props": {
+          "file": "Vercetti file / 001",
+          "name": "TOMMY VERCETTI",
+          "stamp": "LEGEND",
+          "heat": 5,
+          "rows": [
+            {
+              "label": "Status",
+              "value": "Was LIVE"
+            },
+            {
+              "label": "Shirt",
+              "value": "Now a gun pattern"
+            },
+            {
+              "label": "Estate",
+              "value": "A name on two revolvers"
+            },
+            {
+              "label": "Rule",
+              "value": "He cannot walk into the story"
+            }
+          ],
+          "tag": ""
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2002",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "Number one, the file flips to legend"
+    }
+  },
+  {
+    "beat": 7,
+    "start": 480.2,
+    "end": 488,
+    "source_file": "gta6/only-in-leonida.jpg",
+    "src_in": 0,
+    "src_out": 7.8,
+    "kind": "placeholder",
+    "note": "Only in Leonida, still the sun and fun capital",
+    "overlay_cue": [
+      {
+        "component": "citation",
+        "start": 480.45,
+        "end": 487.75,
+        "props": {
+          "chips": [
+            {
+              "label": "Page",
+              "text": "Only in Leonida. A long way from the eighties.",
+              "x": 22,
+              "y": 22,
+              "icon": "doc",
+              "delayMs": 180
+            }
+          ]
+        },
+        "mode": "lower",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "dusk",
+      "label": "Only in Leonida, still the sun and fun capital"
+    }
+  },
+  {
+    "beat": 8,
+    "start": 488,
+    "end": 503.5,
+    "source_file": "gta6/t2-vice-skyline.jpg",
+    "src_in": 0,
+    "src_out": 15.5,
+    "kind": "placeholder",
+    "note": "End card, comment prompt, next video slot",
+    "overlay_cue": [
+      {
+        "component": "end",
+        "start": 488.15,
+        "end": 503.4,
+        "props": {
+          "variant": "full",
+          "clock": "22:41",
+          "date": "Thursday, Nov 19",
+          "slots": [
+            "Next video",
+            "Best for the viewer"
+          ],
+          "notes": [
+            {
+              "title": "Which place first?",
+              "body": "Tell me in the comments"
+            },
+            {
+              "title": "Part 2 after launch",
+              "body": ""
+            }
+          ]
+        },
+        "mode": "cutaway",
+        "skin": "2026"
+      }
+    ],
+    "grade": "2026",
+    "kenBurns": {
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
+    },
+    "placeholder": {
+      "variant": "night",
+      "label": "End card, comment prompt, next video slot"
+    }
+  }
+]
