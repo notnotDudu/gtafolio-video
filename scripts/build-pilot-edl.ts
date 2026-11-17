@@ -80,16 +80,18 @@ cut(61.6, "Zoom to J Duval, then L Caminos", "gta6/revolvers-engravings.jpg", 1,
 ], { kenBurns: { zoomFrom: 1.02, zoomTo: 1.34, origin: "42% 48%" } });
 
 cut(75.2, "Shirt pattern against the weapon pattern", "gta6/vintage-vice-city-weapon-pattern.jpg", 1, [
-  cue("wipe", 61.75, 74.9, { thenYear: "2002", thenLabel: "Tommy's shirt", nowYear: "VI", nowLabel: "Weapon pattern" }),
-  cue("citation", 62.1, 74.6, { chips: [chip("Copy", "Inspired by the palm tree button-up", 22, 300)] }, "lower"),
+  cue("wipe", 61.75, 71.15, { thenYear: "2002", thenLabel: "Tommy's shirt", nowYear: "VI", nowLabel: "Weapon pattern" }),
+  cue("citation", 62.1, 71.0, { chips: [chip("Copy", "Inspired by the palm tree button-up", 22, 300)] }, "lower"),
 ]);
 
 cut(82.72, "Only time the marketing names Tommy", "vc/tommy-teal-shirt.jpg", 1, [
   cue("citation", 75.4, 82.5, { chips: [chip("Once", "Only time Rockstar names Tommy in GTA VI marketing", 22, 22)] }, "lower"),
-]);
+], { vhs: true });
+
+cut(86.9, "2002 UK TV ad, short texture cut", "vc/uk-tv-ad-2002.mp4", 2, null, { vhs: true });
 
 cut(98.2, "Tommy arrives in Vice City, 1986", "vc/in-the-beginning.jpg", 2, [
-  cue("rap", 82.9, 97.9, {
+  cue("rap", 87.05, 97.9, {
     file: "Vercetti file / 001",
     name: "TOMMY VERCETTI",
     rows: [
@@ -101,7 +103,7 @@ cut(98.2, "Tommy arrives in Vice City, 1986", "vc/in-the-beginning.jpg", 2, [
     heat: 2,
     tag: "",
   }),
-]);
+], { vhs: true });
 
 cut(118.4, "Ocean View Hotel, then the mansion", "vc/ocean-view-hotel.jpg", 2, [
   cue("map", 98.4, 118.2, {
@@ -121,15 +123,15 @@ cut(118.4, "Ocean View Hotel, then the mansion", "vc/ocean-view-hotel.jpg", 2, [
       { tone: "warm", label: "Diaz mansion" },
     ],
   }),
-]);
+], { vhs: true });
 
 cut(130.6, "Assets: cab, showroom, clubs", "vc/asset-purchases.jpg", 2, [
   cue("counter", 118.6, 130.4, { to: 3, label: "Assets", caption: "a taxi company, a car showroom, and a few clubs" }),
-]);
+], { vhs: true });
 
 cut(141.04, "Finale at the mansion, 3D universe", "vc/keep-your-friends-close.jpg", 2, [
   cue("beat", 130.8, 140.85, { chapter: "What fans call it", title: "3D UNIVERSE", progressLabel: "File", progress: 1, progressText: "ONE WORLD", tag: "" }),
-]);
+], { vhs: true });
 
 cut(168.7, "Three universes, 2D, 3D, HD", "gta4/rip-wall.jpg", 3, [
   cue("timeline", 141.15, 168.5, {
@@ -143,9 +145,13 @@ cut(168.7, "Three universes, 2D, 3D, HD", "gta4/rip-wall.jpg", 3, [
   cue("citation", 159.4, 168.3, { chips: [chip("Source", "Rockstar Newswire, 18 Sep 2009", 22, 308)] }, "lower"),
 ]);
 
-cut(186.7, "December 2011, definitions of the worlds", "plates/newswire-2011.jpg", 3, [
+cut(177.6, "December 2011, definitions of the worlds", "plates/newswire-2011.jpg", 3, [
   cue("citation", 168.95, 186.4, { chips: [chip("Source", "Rockstar Newswire, 15 Dec 2011", 22, 24), chip("Rule", "Brands cross. 3D characters do not.", 22, 68, "doc", 900)] }, "lower"),
 ]);
+
+cut(181.4, "GTA 1, top-down Liberty City", "gta1/liberty-city-topdown.mp4", 3, null, { vhs: true });
+
+cut(186.7, "High definition is a new world", "plates/newswire-2011.jpg", 3, null);
 
 cut(200.5, "2012 Houser line, same rule a third time", "plates/houser-2012.jpg", 3, [
   cue("citation", 186.95, 200.3, { chips: [chip("Source", "Dan Houser to Game Informer, 2012", 22, 24)] }, "lower"),
@@ -216,7 +222,7 @@ cut(342.4, "Districts named again, missing, unconfirmed", "vc/district-name-card
     credit: "Stylized stand-in. Yanis v16 Leonida map is CC BY 4.0 if that art is used.",
   }),
   cue("citation", 317.6, 341.9, { chips: [chip("Badge", "OFFICIAL / UNCONFIRMED", 22, 24)] }, "lower"),
-]);
+], { vhs: true });
 
 cut(357.36, "Subscribe ask, launch week follow-up", "plates/subscribe.jpg", 5, [
   cue("end", 342.6, 357.15, {
@@ -284,7 +290,7 @@ cut(480.2, "Number one, the file flips to legend", "vc/mansion-finale.jpg", 7, [
     ],
     tag: "",
   }),
-]);
+], { vhs: true });
 
 cut(488, "Only in Leonida, still the sun and fun capital", "gta6/only-in-leonida.jpg", 7, [
   cue("citation", 480.45, 487.75, { chips: [chip("Page", "Only in Leonida. A long way from the eighties.", 22, 22)] }, "lower"),
@@ -317,7 +323,6 @@ const episode = {
   height: 1080,
   duration: 503.5,
   skin: "2002" as const,
-  vhs: { enabled: true, strength: 0.42 },
   narration: { file: "audio/narration.mp3", volume: 1 },
   music: [
     {

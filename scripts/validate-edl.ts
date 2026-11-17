@@ -19,7 +19,13 @@ export const validateEdl = (edl: Edl) => {
   const push = (message: string) => errors.push(message);
   if (!(edl.fps > 0) || !(edl.duration > 0)) push("fps and duration must be positive");
   if (edl.skin !== "2002" && edl.skin !== "2026") push("skin must be 2002 or 2026");
-  if (edl.vhs && edl.vhs.strength !== undefined && (edl.vhs.strength < 0 || edl.vhs.strength > 1)) push("vhs strength must be between 0 and 1");
+  const legacy = edl as Edl & { vhs?: unknown };
+  if (legacy.vhs !== undefined) push("vhs on the EDL is not a channel switch. Set clip.vhs or vhsRanges.");
+  for (const range of edl.vhsRanges ?? []) {
+    if (!(range.end > range.start)) push("a vhs range has a non-positive window");
+    if (range.start < -0.01 || range.end > edl.duration + 0.05) push("a vhs range sits outside the timeline");
+    if (range.strength !== undefined && (range.strength < 0 || range.strength > 1)) push("vhs range strength must be between 0 and 1");
+  }
   if (edl.width !== 1920 || edl.height !== 1080) push(`expected 1920x1080, got ${edl.width}x${edl.height}`);
   if (!edl.narration?.file) push("narration file is required");
   const clips = [...edl.clips].sort((a, b) => a.start - b.start);
@@ -28,6 +34,7 @@ export const validateEdl = (edl: Edl) => {
   for (let i = 0; i < clips.length; i++) {
     const clip = clips[i];
     if (clip.end <= clip.start) push(`${clip.id} has a non-positive duration`);
+    if (clip.vhs !== undefined && typeof clip.vhs !== "boolean") push(`${clip.id} vhs must be true or false`);
     if (clip.kind !== "placeholder" && !clip.file) push(`${clip.id} is missing a file`);
     if (i > 0) {
       const gap = clip.start - clips[i - 1].end;

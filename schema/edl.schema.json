@@ -13,7 +13,11 @@
     "height": { "type": "number" },
     "duration": { "type": "number", "minimum": 0 },
     "skin": { "enum": ["2002", "2026"], "description": "Channel skin. 2002 is the Vice VHS default. 2026 is the HDR sunset skin. An overlay may override it." },
-    "vhs": { "$ref": "#/$defs/vhs" },
+    "vhsRanges": {
+      "type": "array",
+      "description": "Optional footage-tape windows. The picture stays clean outside these ranges and outside clips with vhs set.",
+      "items": { "$ref": "#/$defs/vhsRange" }
+    },
     "narration": { "$ref": "#/$defs/narration" },
     "music": { "type": "array", "items": { "$ref": "#/$defs/audio" } },
     "sfx": { "type": "array", "items": { "$ref": "#/$defs/audio" } },
@@ -114,6 +118,7 @@
         "crop": { "$ref": "#/$defs/crop" },
         "kenBurns": { "$ref": "#/$defs/kenBurns" },
         "grade": { "enum": ["2026", "2002", "none"] },
+        "vhs": { "type": "boolean", "description": "Footage tape for this clip. Omitted means clean." },
         "transitionOut": { "$ref": "#/$defs/transition" },
         "placeholder": { "$ref": "#/$defs/placeholder" },
         "note": { "type": "string" }
@@ -155,12 +160,13 @@
     "overlayName": {
       "enum": ["lockup", "presents", "postcard", "chyron", "social", "cctv", "map", "wipe", "counter", "beat", "rap", "timeline", "citation", "shortsCaptions", "end"]
     },
-    "vhs": {
+    "vhsRange": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["enabled"],
+      "required": ["start", "end"],
       "properties": {
-        "enabled": { "type": "boolean" },
+        "start": { "type": "number", "minimum": 0 },
+        "end": { "type": "number", "minimum": 0 },
         "strength": { "type": "number", "minimum": 0, "maximum": 1 }
       }
     },

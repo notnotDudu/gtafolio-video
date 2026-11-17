@@ -122,6 +122,8 @@ export const VhsLayer: React.FC<{ osd?: string; look?: "plate" | "footage"; stre
   const tearY = hash01(Math.floor(frame / 8) + 4) * (plate ? 360 : 1080);
   const scan = plate ? 0.24 : 0.4 * gain;
   const grid = plate ? 0.1 : 0.18 * gain;
+  const noiseX = (hash01(frame) * 3).toFixed(2);
+  const noiseY = (hash01(frame + 17) * 3).toFixed(2);
   return (
     <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
       <div
@@ -138,6 +140,18 @@ export const VhsLayer: React.FC<{ osd?: string; look?: "plate" | "footage"; stre
           background: `repeating-linear-gradient(0deg, rgba(0,0,0,${scan}) 0px, rgba(0,0,0,${scan}) ${unit}px, transparent ${unit}px, transparent ${3 * unit}px)`,
         }}
       />
+      {plate ? null : (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `radial-gradient(rgba(255,255,255,${(0.22 * gain).toFixed(3)}) 0.5px, transparent 0.65px)`,
+            backgroundSize: "3px 3px",
+            backgroundPosition: `${noiseX}px ${noiseY}px`,
+            opacity: 0.75,
+          }}
+        />
+      )}
       {showBand ? (
         <div
           style={{

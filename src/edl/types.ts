@@ -222,6 +222,8 @@ export type Clip = {
   crop?: Crop;
   kenBurns?: KenBurns;
   grade?: "2026" | "2002" | "none";
+  /** Footage tape for this shot. Omitted or false leaves the picture clean. */
+  vhs?: boolean;
   transitionOut?: Transition;
   placeholder?: PlaceholderLook;
   note?: string;
@@ -260,10 +262,11 @@ export type Captions = {
   words: WordStamp[];
 };
 
-/** Full-frame tape over the picture. Plates and the wipe paint their own treatment. */
-export type VhsPass = {
-  enabled: boolean;
-  /** 0 is clean, 1 is the plate recipe. The channel default stays low so gameplay stays readable. */
+/** A window of the footage tape that does not have to follow a clip edge. */
+export type VhsRange = {
+  start: number;
+  end: number;
+  /** 0 is barely there, 1 is the plate recipe. Default in the player is 0.42. */
   strength?: number;
 };
 
@@ -276,7 +279,8 @@ export type Edl = {
   duration: number;
   /** Channel skin. 2002 is the Vice VHS look. 2026 is the HDR sunset look. */
   skin: Skin;
-  vhs?: VhsPass;
+  /** Optional footage-tape windows. Clips stay clean unless `clip.vhs` is set or the playhead is inside one of these. */
+  vhsRanges?: VhsRange[];
   narration: { file: string; volume: number };
   music: AudioEvent[];
   sfx: AudioEvent[];
@@ -311,6 +315,7 @@ export type ShotListRow = {
   crop?: Crop;
   kenBurns?: KenBurns;
   grade?: "2026" | "2002" | "none";
+  vhs?: boolean;
   transitionOut?: Transition;
   placeholder?: PlaceholderLook;
 };
@@ -323,7 +328,7 @@ export type EpisodeInput = {
   height?: number;
   duration: number;
   skin?: Skin;
-  vhs?: VhsPass;
+  vhsRanges?: VhsRange[];
   narration: { file: string; volume?: number };
   music?: AudioEvent[];
   sfx?: AudioEvent[];

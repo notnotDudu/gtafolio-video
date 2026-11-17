@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { Clip, Edl, Skin, Transition, WordStamp } from "../edl/types";
+import { Clip, Edl, Skin, Transition, VhsRange, WordStamp } from "../edl/types";
 import { OverlayView } from "../overlays/registry";
 import { FONT, PAL } from "../theme/palette";
 import { Scene } from "../theme/scene";
@@ -9,6 +9,9 @@ import { unexpected } from "../theme/never";
 import { KaraokeCaptions } from "./captions";
 
 const clamp = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
+const FOOTAGE_VHS_STRENGTH = 0.42;
+
+const rangeAt = (ranges: VhsRange[], time: number) => ranges.find((range) => time >= range.start && time < range.end);
 
 export const footageSrc = (file: string) => {
   if (file.startsWith("audio/") || file.startsWith("sfx/") || file.startsWith("fonts/")) return staticFile(file);
@@ -110,10 +113,17 @@ const TransitionLayer: React.FC<{ blend?: Transition; durFrames: number }> = ({ 
   }
 };
 
-const ShotClip: React.FC<{ clip: Clip; skin: Skin; tape: boolean }> = ({ clip, skin, tape }) => {
+const ShotClip: React.FC<{ clip: Clip; skin: Skin; ranges: VhsRange[] }> = ({ clip, skin, ranges }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const dur = Math.max(1, Math.round((clip.end - clip.start) * fps));
+  const time = clip.start + frame / fps;
+  const range = rangeAt(ranges, time);
+  const taped = clip.vhs === true || range !== undefined;
+  const strength = range?.strength ?? FOOTAGE_VHS_STRENGTH;
+  const footageFilter = taped
+    ? `saturate(${(1 + 0.22 * strength).toFixed(3)}) contrast(${(1 + 0.05 * strength).toFixed(3)})`
+    : undefined;
   const burn = clip.kenBurns;
   const zoom = burn ? interpolate(frame, [0, dur], [burn.zoomFrom, burn.zoomTo], clamp) : 1;
   const origin = burn?.originTo
@@ -121,10 +131,10 @@ const ShotClip: React.FC<{ clip: Clip; skin: Skin; tape: boolean }> = ({ clip, s
     : burn?.origin ?? "center center";
   return (
     <AbsoluteFill style={{ overflow: "hidden", background: "#000" }}>
-      <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: origin }}>
+      <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: origin, filter: footageFilter }}>
         <ShotMedia clip={clip} fps={fps} skin={skin} />
       </AbsoluteFill>
-      {clip.grade === "2002" && !tape ? <VhsLayer /> : null}
+      {taped ? <VhsLayer look="footage" strength={strength} /> : null}
       {clip.grade === "2026" ? <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, transparent 58%, rgba(10,4,7,0.45) 100%)", boxShadow: "inset 0 0 80px rgba(241,64,155,0.08)", pointerEvents: "none" }} /> : null}
       <TransitionLayer blend={clip.transitionOut} durFrames={dur} />
     </AbsoluteFill>
@@ -150,24 +160,19 @@ export const GtafolioVideo: React.FC<{ edl: Edl }> = ({ edl }) => {
   const total = Math.round(edl.duration * fps);
   const at = (seconds: number) => Math.round(seconds * fps);
   const skin = edl.skin ?? "2002";
-  const tape = edl.vhs?.enabled !== false;
-  const strength = edl.vhs?.strength ?? 0.42;
-  const footageFilter = tape ? `saturate(${(1 + 0.22 * strength).toFixed(3)}) contrast(${(1 + 0.05 * strength).toFixed(3)})` : undefined;
+  const ranges = edl.vhsRanges ?? [];
   return (
     <AbsoluteFill style={{ background: PAL[skin].ink }}>
-      <AbsoluteFill style={{ filter: footageFilter }}>
-        {edl.clips.map((clip, index) => {
-          const from = at(clip.start);
-          const next = index + 1 < edl.clips.length ? at(edl.clips[index + 1].start) : at(clip.end);
-          const dur = Math.max(1, next - from);
-          return (
-            <Sequence key={clip.id} from={from} durationInFrames={dur} name={clip.id}>
-              <ShotClip clip={clip} skin={skin} tape={tape} />
-            </Sequence>
-          );
-        })}
-      </AbsoluteFill>
-      {tape ? <VhsLayer look="footage" strength={strength} /> : null}
+      {edl.clips.map((clip, index) => {
+        const from = at(clip.start);
+        const next = index + 1 < edl.clips.length ? at(edl.clips[index + 1].start) : at(clip.end);
+        const dur = Math.max(1, next - from);
+        return (
+          <Sequence key={clip.id} from={from} durationInFrames={dur} name={clip.id}>
+            <ShotClip clip={clip} skin={skin} ranges={ranges} />
+          </Sequence>
+        );
+      })}
       {edl.overlays.map((overlay) => {
         const from = at(overlay.start);
         const dur = Math.max(1, at(overlay.end) - from);

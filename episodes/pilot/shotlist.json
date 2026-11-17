@@ -289,7 +289,7 @@
       {
         "component": "wipe",
         "start": 61.75,
-        "end": 74.9,
+        "end": 71.15,
         "props": {
           "thenYear": "2002",
           "thenLabel": "Tommy's shirt",
@@ -302,7 +302,7 @@
       {
         "component": "citation",
         "start": 62.1,
-        "end": 74.6,
+        "end": 71,
         "props": {
           "chips": [
             {
@@ -367,21 +367,43 @@
     "placeholder": {
       "variant": "night",
       "label": "Only time the marketing names Tommy"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 2,
     "start": 82.72,
+    "end": 86.9,
+    "source_file": "vc/uk-tv-ad-2002.mp4",
+    "src_in": 0,
+    "src_out": 4.18,
+    "kind": "placeholder",
+    "note": "2002 UK TV ad, short texture cut",
+    "overlay_cue": null,
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "2002 UK TV ad, short texture cut"
+    },
+    "vhs": true
+  },
+  {
+    "beat": 2,
+    "start": 86.9,
     "end": 98.2,
     "source_file": "vc/in-the-beginning.jpg",
     "src_in": 0,
-    "src_out": 15.48,
+    "src_out": 11.3,
     "kind": "placeholder",
     "note": "Tommy arrives in Vice City, 1986",
     "overlay_cue": [
       {
         "component": "rap",
-        "start": 82.9,
+        "start": 87.05,
         "end": 97.9,
         "props": {
           "file": "Vercetti file / 001",
@@ -412,14 +434,15 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
-      "variant": "day",
+      "variant": "dusk",
       "label": "Tommy arrives in Vice City, 1986"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 2,
@@ -485,14 +508,15 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
-      "variant": "dusk",
+      "variant": "night",
       "label": "Ocean View Hotel, then the mansion"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 2,
@@ -518,14 +542,15 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
-      "variant": "night",
+      "variant": "day",
       "label": "Assets: cab, showroom, clubs"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 2,
@@ -554,14 +579,15 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
-      "variant": "day",
+      "variant": "dusk",
       "label": "Finale at the mansion, 3D universe"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 3,
@@ -622,22 +648,22 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
-      "variant": "dusk",
+      "variant": "night",
       "label": "Three universes, 2D, 3D, HD"
     }
   },
   {
     "beat": 3,
     "start": 168.7,
-    "end": 186.7,
+    "end": 177.6,
     "source_file": "plates/newswire-2011.jpg",
     "src_in": 0,
-    "src_out": 18,
+    "src_out": 8.9,
     "kind": "placeholder",
     "note": "December 2011, definitions of the worlds",
     "overlay_cue": [
@@ -670,13 +696,54 @@
       }
     ],
     "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
+      "variant": "day",
+      "label": "December 2011, definitions of the worlds"
+    }
+  },
+  {
+    "beat": 3,
+    "start": 177.6,
+    "end": 181.4,
+    "source_file": "gta1/liberty-city-topdown.mp4",
+    "src_in": 0,
+    "src_out": 3.8,
+    "kind": "placeholder",
+    "note": "GTA 1, top-down Liberty City",
+    "overlay_cue": null,
+    "kenBurns": {
       "zoomFrom": 1.12,
       "zoomTo": 1.04,
       "origin": "62% 58%"
     },
     "placeholder": {
+      "variant": "dusk",
+      "label": "GTA 1, top-down Liberty City"
+    },
+    "vhs": true
+  },
+  {
+    "beat": 3,
+    "start": 181.4,
+    "end": 186.7,
+    "source_file": "plates/newswire-2011.jpg",
+    "src_in": 0,
+    "src_out": 5.3,
+    "kind": "placeholder",
+    "note": "High definition is a new world",
+    "overlay_cue": null,
+    "kenBurns": {
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
+    },
+    "placeholder": {
       "variant": "night",
-      "label": "December 2011, definitions of the worlds"
+      "label": "High definition is a new world"
     }
   },
   {
@@ -710,9 +777,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "day",
@@ -746,9 +813,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "dusk",
@@ -807,9 +874,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "night",
@@ -858,9 +925,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "day",
@@ -921,9 +988,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "dusk",
@@ -953,9 +1020,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "night",
@@ -1027,9 +1094,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "day",
@@ -1163,14 +1230,15 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "dusk",
       "label": "Districts named again, missing, unconfirmed"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 5,
@@ -1208,9 +1276,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "night",
@@ -1252,9 +1320,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "day",
@@ -1292,9 +1360,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "dusk",
@@ -1340,9 +1408,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "night",
@@ -1388,9 +1456,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "day",
@@ -1420,9 +1488,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "dusk",
@@ -1473,9 +1541,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "night",
@@ -1526,14 +1594,15 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "day",
       "label": "Number one, the file flips to legend"
-    }
+    },
+    "vhs": true
   },
   {
     "beat": 7,
@@ -1566,9 +1635,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.04,
-      "zoomTo": 1.12,
-      "origin": "50% 42%"
+      "zoomFrom": 1.12,
+      "zoomTo": 1.04,
+      "origin": "62% 58%"
     },
     "placeholder": {
       "variant": "dusk",
@@ -1613,9 +1682,9 @@
       }
     ],
     "kenBurns": {
-      "zoomFrom": 1.12,
-      "zoomTo": 1.04,
-      "origin": "62% 58%"
+      "zoomFrom": 1.04,
+      "zoomTo": 1.12,
+      "origin": "50% 42%"
     },
     "placeholder": {
       "variant": "night",
